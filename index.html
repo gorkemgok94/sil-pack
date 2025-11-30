@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sil-Pack</title>
+    <link rel="icon" href="./public/Sil-Pack_Logo.webp" type="image/x-icon">
+    <!-- LINK TO CSS HERE -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#home">
+                    <img src="public/sil-pack logo big.webp" alt="Sil Pack Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home (Hero) -->
+    <section id="home">
+        <div class="hero-content">
+            <h1>Reinheit, auf die Sie sich verlassen können.</h1>
+            <a href="#shop" class="btn">Jetzt Einkaufen</a>
+        </div>
+    </section>
+
+    <!-- Shop -->
+    <section id="shop">
+        <h2 class="section-title">Unsere Produkte</h2>
+        <!-- The container needs a specific class for the carousel logic -->
+        <div class="product-carousel" id="product-container">
+
+            
+
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-container">
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Business Owner">
+            </div>
+            <div class="about-text">
+                <h3>Meet the Founder</h3>
+                <p>Welcome to our family-owned business. We have been dedicated to providing the highest quality natural
+                    products since 2010. Our journey began in a small kitchen with a passion for purity and
+                    sustainability.</p>
+                <br>
+                <p>We believe that nature holds the secret to true wellbeing. Every product we make is tested rigorously
+                    to ensure it meets our standard: "Reinheit, auf die Sie sich verlassen können."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-form">
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 ReineMarke Business. All rights reserved.</p>
+    </footer>
+
+    <!-- LINK TO JS HERE -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

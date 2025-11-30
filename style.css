@@ -1,0 +1,327 @@
+/* --- CSS VARIABLES & RESET --- */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --bg-light: #f4f7f6;
+    --text-dark: #333;
+    --white: #ffffff;
+    --padding-section: 80px 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- NAVIGATION --- */
+header {
+    background: var(--white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.logo img {
+    height: 36px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Mobile Menu Toggle */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* --- HERO SECTION --- */
+#home {
+    height: 100vh;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)), url('public/sil-pack-servietten-auf-paletten.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    color: black;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #2980b9;
+}
+
+/* --- SECTIONS GENERAL --- */
+section {
+    padding: var(--padding-section);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+}
+
+/* --- SHOP SECTION --- */
+#shop {
+    background-color: var(--bg-light);
+}
+
+/* Container for the sliding area */
+.product-carousel {
+    display: flex;
+    /* Arranges items in a row */
+    overflow-x: auto;
+    /* Allows horizontal scrolling */
+    scroll-snap-type: x mandatory;
+    /* Forces the scroll to snap to cards */
+    gap: 20px;
+    /* Space between cards */
+    padding-bottom: 20px;
+    /* Space for scrollbar */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling for iOS */
+}
+
+/* Individual Card Styling */
+.product-card {
+    /* --- CAROUSEL LOGIC (New) --- */
+    flex: 0 0 auto;
+    /* Prevents the card from shrinking */
+    width: 280px;
+    /* Sets a fixed width for every card */
+    scroll-snap-align: start;
+    /* Aligns card to the left when scrolling stops */
+
+    /* --- VISUAL STYLING (Kept from your old code) --- */
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* These two lines keep your text centered and add space at bottom */
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.product-card img {
+    width: 100%;       /* Force image to match the card width */
+    height: 180px;     /* FORCE a shorter height (adjust this number as needed) */
+    object-fit: cover; /* CRITICAL: Crops the image so it doesn't look squished/stretched */
+    display: block;    /* Removes tiny gap at bottom of image */
+}
+
+/* Optional: Hide the scrollbar for a cleaner look */
+.product-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.product-carousel::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.product-carousel::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.product-carousel::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.price {
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: block;
+    margin: 10px 0;
+}
+
+/* --- ABOUT US SECTION --- */
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-img {
+    flex: 1 1 400px;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    flex: 1 1 400px;
+}
+
+/* --- CONTACT SECTION --- */
+#contact {
+    background-color: var(--bg-light);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: var(--white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
