@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produktdetails</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="product-detail"></main>
+  <script src="script.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get('id'), 10);
+    const product = products.find(p => p.id === id);
+
+    const detail = document.getElementById('product-detail');
+    if (!product) {
+      detail.innerHTML = '<p>Produkt nicht gefunden.</p>';
+    } else {
+      detail.innerHTML = `
+        <div class="product-detail-card">
+          <img src="${product.images[0]}" alt="${product.name}">
+          <h1>${product.name}</h1>
+          <a href="index.html#shop" class="btn">Zurück zu Produkten</a>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>

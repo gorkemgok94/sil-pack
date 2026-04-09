@@ -4,7 +4,7 @@ const navSlide = () => {
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
 
-    if(burger) { // Check if burger exists to prevent errors
+    if (burger) { // Check if burger exists to prevent errors
         burger.addEventListener('click', () => {
             // Toggle Nav
             nav.classList.toggle('nav-active');
@@ -141,9 +141,9 @@ const products = [
 /* --- GENERATOR FUNCTION --- */
 function loadProducts() {
     const container = document.getElementById('product-container');
-    
+
     // Safety check: if html ID is missing, stop here
-    if (!container) return; 
+    if (!container) return;
 
     container.innerHTML = '';
 
@@ -155,8 +155,7 @@ function loadProducts() {
                 <img src="${mainImage}" alt="${product.name}">
                 <div class="product-info">
                     <h3>${product.name}</h3>
-                    <a href="#" class="btn" style="padding: 5px 15px; margin-top: 10px;">Add to Cart</a>
-                </div>
+                    <a href="product.html?id=${product.id}" class="btn" style="padding: 5px 15px; margin-top: 10px;">Zum Produkt</a>                </div>
             </div>
         `;
 
